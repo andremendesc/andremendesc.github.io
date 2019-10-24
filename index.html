@@ -26,19 +26,44 @@
 			  max-width: 100%;
 			  height: auto;
 			}
+			/* Adds grid css from Mark Miller's website (https://zeph.co/grid)  */
+			.grid {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.column {
+				box-sizing: border-box;
+				flex: 1;
+			}
+
+			.bigger { flex: 2.5; }
+
+			.halves .column  { flex: 0 0 50%; }
+			.thirds .column  { flex: 0 0 33.3333%; }
+			.fourths .column { flex: 0 0 25%; }
+
+			@media (max-width: 900px) {
+				.grid { display: block; }
+			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
-        <h1>Hi! I'm André Mendes</h1>
-				<p>This place is mostly for me to drop stuff I'm interested in, that can be made public and somehow be useful to others</p>
+		<div class="grid">
+			<div class="bigger column">Hi! I'm André Mendes</div>
+			<p>This place is mostly for me to drop stuff I'm interested in, that can be made public and somehow be useful to others</p>
+			<div class="column">
+				some links
+				<br />
+				<br />
+				<div class="grid halves">
+					<div class="column"><a href="https://dremendes.wordpress.com">My old, unmaintained blog</a></div>
+					<div class="column"><a href="mailto:andre.mendesc@gmail.com">email</a></div>
+					<div class="column"><a href="https://github.com/andremendesc">github.com/andremendesc</a></div>
+				</div>
+			</div>
 		</div>
 		<footer>
-    		<ul>
-            <li><a href="https://dremendes.wordpress.com">My old, unmaintained blog</a></li>
-        		<li><a href="mailto:andre.mendesc@gmail.com">email</a></li>
-        		<li><a href="https://github.com/andremendesc">github.com/andremendesc</a></li>
-			</ul>
 		</footer>
 	</body>
 </html>
