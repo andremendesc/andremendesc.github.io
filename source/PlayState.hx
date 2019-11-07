@@ -27,7 +27,7 @@ class PlayState extends FlxState
  		add(_policia);
 
 		_btnPlay = new FlxButton(200, 3, "Voltar", clickVoltar);
-        add(_btnPlay);
+		add(_btnPlay);
 
 		super.create();
 	}
