@@ -8,7 +8,6 @@ import flixel.FlxObject;
 
 class Policia extends FlxSprite
 {
-    public var speed:Float = 200;
 
     public function new(?X:Float=0, ?Y:Float=0)
     {
@@ -35,6 +34,6 @@ class Policia extends FlxSprite
         var _left:Bool = false;
         var _right:Bool = false;
 
-   
+        //Primeiro fazer ele andar por aí sem regra..
     }
 }

@@ -12,13 +12,4 @@ class Background extends FlxSprite
         makeGraphic(300, 300, FlxColor.BLUE);
     }
 
-    override public function update(elapsed:Float):Void
-    {
-        movement();
-        super.update(elapsed);
-    }
-
-    function movement():Void
-    {
-    }
 }

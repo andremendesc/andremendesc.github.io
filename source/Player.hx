@@ -15,9 +15,12 @@ class Player extends FlxSprite
         super(X, Y);
 
         loadGraphic(AssetPaths.image_boy__png, true, 100, 100);
+
         drag.x = drag.y = 1600;
+
         setFacingFlip(FlxObject.RIGHT, false, false);
         setFacingFlip(FlxObject.LEFT, true, false);
+        
         animation.add("lr", [0, 1, 2], 12, false);
         animation.add("u", [0, 1, 2], 12, false);
         animation.add("d", [2, 1, 0], 12, false);
