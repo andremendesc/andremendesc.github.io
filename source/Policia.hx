@@ -13,10 +13,13 @@ class Policia extends FlxSprite
     {
         super(X, Y);
         loadGraphic(AssetPaths.officer_unboxed__png, true, 32, 32);
+
         drag.x = drag.y = 1600;
+
         setFacingFlip(FlxObject.RIGHT, false, false);
         setFacingFlip(FlxObject.LEFT, true, false);
-        animation.add("lr", [10, 11, 12, 13, 14, 15, 16], 12, false);
+        
+        animation.add("idle", [0, 1, 2, 3, 4, 5, 6], 5, true);
         animation.add("u", [10, 11, 12, 13, 14, 15, 16], 12, false);
         animation.add("d", [16, 15, 14, 13, 12, 11, 10], 12, false);
     }
@@ -34,6 +37,6 @@ class Policia extends FlxSprite
         var _left:Bool = false;
         var _right:Bool = false;
 
-        //Primeiro fazer ele andar por aí sem regra..
+        animation.play("idle");
     }
 }

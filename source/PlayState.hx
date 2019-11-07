@@ -20,10 +20,11 @@ class PlayState extends FlxState
 		add(_bg);
 		
 		_player = new Player(20, 20);
-		_player.scale.set(0.3,0.3);
+		_player.scale.set(0.5,0.5);
  		add(_player);
 
 		_policia = new Policia(120, 120);
+		_policia.scale.set(2.5,2.5);
  		add(_policia);
 
 		_btnPlay = new FlxButton(200, 3, "Voltar", clickVoltar);

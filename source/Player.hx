@@ -20,10 +20,10 @@ class Player extends FlxSprite
 
         setFacingFlip(FlxObject.RIGHT, false, false);
         setFacingFlip(FlxObject.LEFT, true, false);
-        
-        animation.add("lr", [0, 1, 2], 12, false);
-        animation.add("u", [0, 1, 2], 12, false);
-        animation.add("d", [2, 1, 0], 12, false);
+
+        animation.add("lr", [1, 2, 3], 12, false);
+        animation.add("u", [1, 2, 3], 12, false);
+        animation.add("d", [3, 2, 1], 12, false);
     }
 
     override public function update(elapsed:Float):Void
