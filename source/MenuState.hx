@@ -12,7 +12,7 @@ class MenuState extends FlxState
 
 	override public function create():Void
 	{
-		super.create();
+        super.create();
         
         _btnPlay = new FlxButton(110, 250, "Começar", clickPlay);
         add(_btnPlay);

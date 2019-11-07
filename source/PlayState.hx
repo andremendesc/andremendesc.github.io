@@ -38,7 +38,7 @@ class PlayState extends FlxState
 	}
 
 	function clickVoltar():Void
-    {
-        FlxG.switchState(new MenuState());
-    }
+	{
+		FlxG.switchState(new MenuState());
+	}
 }
