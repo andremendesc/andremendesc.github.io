@@ -40,26 +40,28 @@ class Player extends FlxSprite
         var _left:Bool = false;
         var _right:Bool = false;
         var _angle:Float = 0.0;
-        var _point:FlxPoint = new FlxPoint(this.x, this.y);
+        var _pointCurrent:FlxPoint = new FlxPoint(this.x, this.y);
 
         for (touch in FlxG.touches.list)
         {
             if (touch.justPressed || touch.pressed) {
                 FlxVelocity.moveTowardsTouch(this, touch, speed);
-                _angle = _point.angleBetween(touch.getPosition());
-                if (_angle >= -45 && _angle < 45) {
+                _angle = _pointCurrent.angleBetween(touch.getPosition());
+                
+                if (_angle >= -180 && _angle < -45) {
+                    facing = FlxObject.UP;
+                    animation.play("u");
+                } else if (_angle >= -45 && _angle < 45) {
                     facing = FlxObject.RIGHT;
                     animation.play("lr");
                 } else if (_angle >= 45 && _angle < 135) {
-                    facing = FlxObject.DOWN; 
+                    facing = FlxObject.DOWN;
                     animation.play("d");
-                } else if ( (_angle >= 135 && _angle <= 180) || (_angle < -135 && _angle >= -180) ) {
-                    facing = FlxObject.LEFT;
-                    animation.play("lr");
-                } else if (_angle < -45 && _angle >= -135) {
-                    facing = FlxObject.UP;
-                    animation.play("u");
+                } else if (_angle >= 135 && _angle < 180) {
+                     facing = FlxObject.LEFT;
+                     animation.play("lr");
                 }
+                
             }
             if (touch.justReleased) {}
         }
