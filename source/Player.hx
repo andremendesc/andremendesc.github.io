@@ -56,7 +56,7 @@ class Player extends FlxSprite
                 } else if ( (_angle >= 135 && _angle <= 180) || (_angle < -135 && _angle >= -180) ) {
                     facing = FlxObject.LEFT;
                     animation.play("lr");
-                } else if (_angle < -45 && _angle >= 135) {
+                } else if (_angle < -45 && _angle >= -135) {
                     facing = FlxObject.UP;
                     animation.play("u");
                 }
