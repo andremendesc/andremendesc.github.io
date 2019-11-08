@@ -39,15 +39,28 @@ class Player extends FlxSprite
         var _down:Bool = false;
         var _left:Bool = false;
         var _right:Bool = false;
-        var playerPosition = FlxPoint;
-        var touchPosition = FlxPoint;
+        var _angle:Float = 0.0;
+        var _point:FlxPoint = new FlxPoint(this.x, this.y);
 
         for (touch in FlxG.touches.list)
         {
-            if (touch.justPressed) {
+            if (touch.justPressed || touch.pressed) {
                 FlxVelocity.moveTowardsTouch(this, touch, speed);
+                _angle = _point.angleBetween(touch.getPosition());
+                if (_angle >= -45 && _angle < 45) {
+                    facing = FlxObject.RIGHT;
+                    animation.play("lr");
+                } else if (_angle >= 45 && _angle < 135) {
+                    facing = FlxObject.DOWN; 
+                    animation.play("d");
+                } else if ( (_angle >= 135 && _angle <= 180) || (_angle < -135 && _angle >= -180) ) {
+                    facing = FlxObject.LEFT;
+                    animation.play("lr");
+                } else if (_angle < -45 && _angle >= 135) {
+                    facing = FlxObject.UP;
+                    animation.play("u");
+                }
             }
-            if (touch.pressed) {}
             if (touch.justReleased) {}
         }
 
@@ -61,36 +74,31 @@ class Player extends FlxSprite
         if (_left && _right)
             _left = _right = false;
         if (_up || _down || _left || _right) {
-            var mA:Float = 0; // our temporary angle
-            if (_up)  // the player is pressing UP
-            {
-                mA = -90; // set our angle to -90 (12 o'clock)
+
+            var mA:Float = 0;
+
+            if (_up) {
+                mA = -90; 
                 if (_left)
-                    mA -= 45; // if the player is also pressing LEFT, subtract 45 degrees from our angle - we're moving up and left
+                    mA -= 45; // if the player is also pressing LEFT, subtract 45 degrees from  angle - we're moving up and left
                 else if (_right)
-                    mA += 45; // similarly, if the player is pressing RIGHT, add 45 degrees (up and right)
-                facing = FlxObject.UP; // the sprite should be facing UP
-            }
-            else if (_down) // the player is pressing DOWN
-            {
-                mA = 90; // set our angle to 90 (6 o'clock)
+                    mA += 45; // similarly, if the player is pressing RIGHT add 45 degrees (up and right)
+                facing = FlxObject.UP; 
+            } else if (_down) {
+                mA = 90;
                 if (_left)
                     mA += 45; // add 45 degrees if the player is also pressing LEFT
                 else if (_right)
                     mA -= 45; // or subtract 45 if they are pressing RIGHT
                 facing = FlxObject.DOWN; // the sprite is facing DOWN
+            } else if (_left) { 
+                mA = 180; 
+                facing = FlxObject.LEFT;
+            } else if (_right) {
+                mA = 0;
+                facing = FlxObject.RIGHT;
             }
-            else if (_left) // if the player is not pressing UP or DOWN, but they are pressing LEFT
-            {
-                mA = 180; // set our angle to 180 (9 o'clock)
-                facing = FlxObject.LEFT; // the sprite should be facing LEFT
-            }
-            else if (_right) // the player is not pressing UP, DOWN, or LEFT, and they ARE pressing RIGHT
-            {
-                mA = 0; // set our angle to 0 (3 o'clock)
-                facing = FlxObject.RIGHT; // set the sprite's facing to RIGHT
-            }
-            // determine our velocity based on angle and speed
+            // determine velocity based on angle and speed
             velocity.set(speed, 0);
             velocity.rotate(FlxPoint.weak(0, 0), mA);
 
