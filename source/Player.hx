@@ -5,6 +5,7 @@ import flixel.util.FlxColor;
 import flixel.math.FlxPoint;
 import flixel.FlxG;
 import flixel.FlxObject;
+import flixel.math.FlxVelocity;
 
 class Player extends FlxSprite
 {
@@ -38,6 +39,17 @@ class Player extends FlxSprite
         var _down:Bool = false;
         var _left:Bool = false;
         var _right:Bool = false;
+        var playerPosition = FlxPoint;
+        var touchPosition = FlxPoint;
+
+        for (touch in FlxG.touches.list)
+        {
+            if (touch.justPressed) {
+                FlxVelocity.moveTowardsTouch(this, touch, speed);
+            }
+            if (touch.pressed) {}
+            if (touch.justReleased) {}
+        }
 
         _up = FlxG.keys.anyPressed([UP, W]);
         _down = FlxG.keys.anyPressed([DOWN, S]);
