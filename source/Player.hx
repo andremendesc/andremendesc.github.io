@@ -15,16 +15,19 @@ class Player extends FlxSprite
     {
         super(X, Y);
 
-        loadGraphic(AssetPaths.image_boy__png, true, 100, 100);
+        loadGraphic(AssetPaths.running__png, true, 479, 797);
 
+        setSize(8, 14);
+        offset.set(4, 2);
         drag.x = drag.y = 1600;
 
         setFacingFlip(FlxObject.RIGHT, false, false);
         setFacingFlip(FlxObject.LEFT, true, false);
-
-        animation.add("lr", [1, 2, 3], 12, false);
-        animation.add("u", [1, 2, 3], 12, false);
-        animation.add("d", [3, 2, 1], 12, false);
+        
+        animation.add("idle", [2, 5], 3, true);
+        animation.add("lr", [0, 1, 2, 3, 4, 5], 5, true);
+        animation.add("u", [2, 5], 3, false);
+        animation.add("d", [5, 2], 3, false);
     }
 
     override public function update(elapsed:Float):Void
