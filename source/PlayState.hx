@@ -33,11 +33,13 @@ class PlayState extends FlxState
 		
 		_player = new Player();
 		_player.scale.set(0.05, 0.05);
+		_player.updateHitbox();
 		_map.loadEntities(placeEntities, "entities");
  		add(_player);
 
 		_policia = new Policia(120, 120);
 		_policia.scale.set(2.5, 2.5);
+		_policia.updateHitbox();
  		add(_policia);
 
 		_btnPlay = new FlxButton(200, 3, "Voltar", clickVoltar);
