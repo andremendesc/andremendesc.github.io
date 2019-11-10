@@ -25,7 +25,7 @@
   </CameraSize>
   <ExportCameraPosition>false</ExportCameraPosition>
   <LevelValueDefinitions>
-    <ValueDefinition xsi:type="IntValueDefinition" Name="square" Default="0" Min="0" Max="100" ShowSlider="false" />
+    <ValueDefinition xsi:type="IntValueDefinition" Name="square" Default="16" Min="0" Max="100" ShowSlider="false" />
   </LevelValueDefinitions>
   <LayerDefinitions>
     <LayerDefinition xsi:type="TileLayerDefinition">
