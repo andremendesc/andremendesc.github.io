@@ -66,7 +66,9 @@ class Player extends FlxSprite
                 }
                 
             }
-            if (touch.justReleased) {}
+            if (touch.justReleased) {
+                animation.play("idle");
+            }
         }
 
         _up = FlxG.keys.anyPressed([UP, W]);
@@ -119,6 +121,8 @@ class Player extends FlxSprite
                         animation.play("d");
                 }
             }
+        } else {
+            animation.play("idle");
         }
     }
 }

@@ -24,14 +24,15 @@ class PlayState extends FlxState
 		_bg = new Background();
 		add(_bg);
 
-		_map = new FlxOgmoLoader(AssetPaths.level1__oel);
-		_mWalls = _map.loadTilemap(AssetPaths.streets__png, 16, 16, "walls");
+		_map = new FlxOgmoLoader(AssetPaths.level2__oel);
+		_mWalls = _map.loadTilemap(AssetPaths.brick_tiles_1__png, 16, 16, "walls");
 		_mWalls.follow();
-		_mWalls.setTileProperties(469, FlxObject.NONE);
-		_mWalls.setTileProperties(52, FlxObject.ANY);
-		_mWalls.setTileProperties(53, FlxObject.ANY);
-		_mWalls.setTileProperties(54, FlxObject.ANY);
-		_mWalls.setTileProperties(56, FlxObject.ANY);
+		_mWalls.setTileProperties(17, FlxObject.NONE);
+		_mWalls.setTileProperties(0, FlxObject.ANY);
+		_mWalls.setTileProperties(1, FlxObject.ANY);
+		_mWalls.setTileProperties(14, FlxObject.ANY);
+		_mWalls.setTileProperties(15, FlxObject.ANY);
+		_mWalls.setTileProperties(9, FlxObject.ANY);
 		add(_mWalls);
 		
 		_player = new Player();
@@ -47,6 +48,8 @@ class PlayState extends FlxState
 
 		_btnPlay = new FlxButton(200, 3, "Voltar", clickVoltar);
 		add(_btnPlay);
+
+		FlxG.camera.follow(_player, TOPDOWN, 1);
 
 		super.create();
 	}

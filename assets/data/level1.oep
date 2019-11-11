@@ -5,23 +5,23 @@
   <BackgroundColor A="255" R="125" G="160" B="255" />
   <GridColor A="255" R="255" G="240" B="90" />
   <LevelDefaultSize>
-    <Width>300</Width>
-    <Height>300</Height>
+    <Width>1200</Width>
+    <Height>1200</Height>
   </LevelDefaultSize>
   <LevelMinimumSize>
-    <Width>300</Width>
-    <Height>300</Height>
+    <Width>1200</Width>
+    <Height>1200</Height>
   </LevelMinimumSize>
   <LevelMaximumSize>
-    <Width>300</Width>
-    <Height>300</Height>
+    <Width>1200</Width>
+    <Height>1200</Height>
   </LevelMaximumSize>
   <Filename>Z:\assets\data\level1.oep</Filename>
   <AngleMode>Radians</AngleMode>
-  <CameraEnabled>false</CameraEnabled>
+  <CameraEnabled>true</CameraEnabled>
   <CameraSize>
-    <Width>640</Width>
-    <Height>480</Height>
+    <Width>300</Width>
+    <Height>300</Height>
   </CameraSize>
   <ExportCameraPosition>false</ExportCameraPosition>
   <LevelValueDefinitions>
@@ -56,6 +56,33 @@
     <Tileset>
       <Name>tiles</Name>
       <FilePath>..\images\streets.png</FilePath>
+      <TileSize>
+        <Width>16</Width>
+        <Height>16</Height>
+      </TileSize>
+      <TileSep>0</TileSep>
+    </Tileset>
+    <Tileset>
+      <Name>tijolos</Name>
+      <FilePath>..\images\brick_tiles_1.png</FilePath>
+      <TileSize>
+        <Width>16</Width>
+        <Height>16</Height>
+      </TileSize>
+      <TileSep>0</TileSep>
+    </Tileset>
+    <Tileset>
+      <Name>arbusto</Name>
+      <FilePath>..\images\tree_13.png</FilePath>
+      <TileSize>
+        <Width>16</Width>
+        <Height>16</Height>
+      </TileSize>
+      <TileSep>0</TileSep>
+    </Tileset>
+    <Tileset>
+      <Name>caminhos</Name>
+      <FilePath>..\images\PathAndObjects.png</FilePath>
       <TileSize>
         <Width>16</Width>
         <Height>16</Height>
