@@ -8,7 +8,6 @@ import flixel.addons.editors.ogmo.FlxOgmoLoader;
 import flixel.tile.FlxTilemap;
 import flixel.FlxObject;
 
-
 class PlayState extends FlxState
 {
 
@@ -20,6 +19,8 @@ class PlayState extends FlxState
 	var _mForeground:FlxTilemap;
 	var _mForeground2:FlxTilemap;
 	var _policia:Policia;
+	var _barText:FlxText;
+	private var hud:Hud;
 
 	override public function create():Void
 	{
@@ -51,19 +52,15 @@ class PlayState extends FlxState
 
 		_mForeground2 = _map.loadTilemap(AssetPaths.tilemap_packed__png, 16, 16, "foreground2");
 		_mForeground2.follow();
-		_mForeground2.setTileProperties(315, FlxObject.NONE);
-		_mForeground2.setTileProperties(316, FlxObject.NONE);
-		_mForeground2.setTileProperties(317, FlxObject.NONE);
+		_mForeground2.setTileProperties(164, FlxObject.NONE);
 		_mForeground2.setTileProperties(232, FlxObject.NONE);
 		_mForeground2.setTileProperties(259, FlxObject.ANY);
-		_mForeground2.setTileProperties(449, FlxObject.ANY);
-		_mForeground2.setTileProperties(342, FlxObject.ANY);
-		_mForeground2.setTileProperties(343, FlxObject.ANY);
-		_mForeground2.setTileProperties(344, FlxObject.ANY);
-		_mForeground2.setTileProperties(398, FlxObject.ANY);
-		_mForeground2.setTileProperties(164, FlxObject.NONE);
+		_mForeground2.setTileProperties(315, FlxObject.NONE, null, null, 2);
+		_mForeground2.setTileProperties(342, FlxObject.ANY, null, null, 2);
 		_mForeground2.setTileProperties(391, FlxObject.NONE);
-		_mForeground2.setTileProperties(425, FlxObject.NONE);
+		_mForeground2.setTileProperties(398, FlxObject.ANY);
+		_mForeground2.setTileProperties(425, FlxObject.NONE);		
+		_mForeground2.setTileProperties(449, FlxObject.ANY);		
 		_mForeground2.setTileProperties(471, FlxObject.ANY);
 		add(_mForeground2);
 
@@ -71,11 +68,14 @@ class PlayState extends FlxState
 		add(_btnPlay);
 
 		_policia = new Policia(120, 120);
-		_policia.scale.set(1.5, 1.5);
+		_policia.scale.set(1.3, 1.3);
 		_policia.updateHitbox();
  		add(_policia);
 
 		FlxG.camera.follow(_player, TOPDOWN, 1);
+
+		hud = new Hud();
+		add(hud);
 
 		super.create();
 	}
