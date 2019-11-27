@@ -8,9 +8,13 @@ Lula saiu da cadeia, Bolsonaro. E agora?
 ### Melhor correr!!!
 
 No PC:
+
 Se movimente usando as setas ou WSAD
+
 Pressione X para se defender fazendo arminha com a mão
+
 Pressione Z para fingir que levou uma facada
+
 Pule pressionando ESPAÇO
 
 No celular/tablet:
