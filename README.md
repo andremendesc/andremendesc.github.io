@@ -3,8 +3,10 @@
 
 # Bozorun
 
-Lula saiu da cadeia, Bolsonaro. E agora?
+Nesse infinite runner políticamente carregado, Bozonaro precisa evitar que seus obstáculos travem seu caminho.
 
-### Melhor correr!!!
+Evite os obstáculos pulando! Só tocar a tela do celular ou pressioar UP no PC.
 
-Evite os obstáculos pulando! Só tocar a tela do celular ou pressioar UP no PC!
+No PC, 'r' reinicia o estágio.
+
+Source do jogo: [https://github.com/andremendesc/bozorun](https://github.com/andremendesc/bozorun)
