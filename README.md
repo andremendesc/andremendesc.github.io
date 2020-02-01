@@ -9,7 +9,7 @@ Evite os obstáculos pulando!
 
 Toque e pressione a tela do celular para pular mais alto.
 
-Se estiver num pc, pressione U> ou <ESPAÇO> para pular.
+Se estiver num pc, pressione UP ou ESPAÇO para pular.
 
 No PC, r ou ENTER reinicia a fase.
 
