@@ -3,10 +3,14 @@
 
 # Bozorun
 
-Nesse infinite runner políticamente carregado, Bozonaro precisa evitar que seus obstáculos travem seu caminho.
+Nesse infinite runner politicamente carregado, Bozonaro precisa evitar que obstáculos travem seu caminho.
 
-Evite os obstáculos pulando! Só tocar a tela do celular ou pressioar UP no PC.
+Evite os obstáculos pulando! 
 
-No PC, 'r' reinicia o estágio.
+Toque e pressione a tela do celular para pular mais alto.
+
+Se estiver num pc, pressione UP ou ESPAÇO para pular.
+
+No PC, r ou ENTER reinicia a fase.
 
 Source do jogo: [https://github.com/andremendesc/bozorun](https://github.com/andremendesc/bozorun)
