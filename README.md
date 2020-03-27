@@ -1,4 +1,4 @@
-# [andremendesc.github.io](http://andremendesc.github.io)
+# [fullynotanalien.github.io](http://fullynotanalien.github.io)
 ![Tela do site](https://raw.githubusercontent.com/andremendesc/andremendesc.github.io/master/assets/images/screen.png)
 
 # Bozorun
@@ -13,4 +13,4 @@ Se estiver num pc, pressione UP ou ESPAÇO para pular.
 
 No PC, r ou ENTER reinicia a fase.
 
-Source do jogo: [https://github.com/andremendesc/bozorun](https://github.com/andremendesc/bozorun)
+Source do jogo: [https://github.com/fullynotanalien/bozorun](https://github.com/andremendesc/bozorun)
